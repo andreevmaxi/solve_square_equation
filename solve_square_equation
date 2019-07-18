@@ -1,0 +1,252 @@
+#include <iostream>
+#include <cmath>
+#include <float.h>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+
+int a = 0;
+int b = 0;
+int c = 0;
+double x1 = NAN;
+double x2 = NAN;
+string user_ans = "";
+vector <char> user_equation;
+char tmp = ' ';
+
+char solve_square_equation(int a, int b, int c, double* x1, double* x2){
+	if (c == 0)
+	{
+
+		if (b == 0)
+		{
+
+			if (a == 0)
+			{//a=0 b=0 c=0
+				return 'i';// where is 'i'-infinite number solves of this equation
+			} else
+			{//b=0 c=0
+				*x1 = 0;
+				return '1';
+			}
+
+		} else
+		{
+
+			if(a == 0)
+			{//a=0 c=0
+				*x1 = 0;
+				return '1';
+			} else
+			{//c=0
+					*x1 = 0;
+					*x2 = -b/a;
+					return '2';
+			}
+
+		}
+
+	} else
+	{
+
+		if(b == 0)
+		{
+
+			if(a == 0)
+			{//a=0 b=0
+
+				return '0';
+
+			} else
+			{//b=0
+
+				if(c > 0)
+				{//ax^2+|c|=0
+
+					return '0';
+
+				} else
+				{//ax^2-|c|=0
+
+					*x1 = -sqrt(-c);
+					*x2 = sqrt(-c);
+					return '2';
+
+				}
+
+			}
+
+		} else
+		{
+
+			if(a == 0)
+			{//a=0
+
+				*x1 = -c/b;
+				return '1';
+
+			} else
+			{//nothing = 0
+
+				*x1 = ( - b - sqrt( b * b - 4 * a * c ) ) / (2 * a);
+				*x2 = ( - b + sqrt( b * b - 4 * a * c ) ) / (2 * a);
+				return '2';
+
+			}
+
+		}
+
+	}
+
+}
+
+char print_equation(int* a, int* b, int* c){
+
+    int i = 0;
+    int tmp_coefficient = 0;
+    bool sign_flag = 0;
+
+    tmp = user_equation[i];
+
+    while(tmp!='=' && tmp!='\n')
+    {
+
+
+        if(tmp != ' ' && tmp != '+' && tmp != '-')
+        {
+            if(tmp != 'x' && tmp != '*')
+            {
+                tmp_coefficient = tmp_coefficient*10 + (tmp - '0');
+
+            } else {
+                if(tmp_coefficient == 0){
+                    ++tmp_coefficient;
+                }
+                if(tmp == '*'){
+                    ++i;
+                }
+
+                if(user_equation[i+1] == '^'){
+
+                    if (sign_flag == 0){
+                        *a += tmp_coefficient;
+                    } else
+                    {
+                        *a -= tmp_coefficient;
+                    }
+
+                    sign_flag = 0;
+                    i += 2;
+                    tmp_coefficient = 0;
+                }else
+                {
+                    if (sign_flag == 0){
+                        *b += tmp_coefficient;
+                    } else
+                    {
+                        *b -= tmp_coefficient;
+                    }
+
+                    sign_flag = 0;
+                    tmp_coefficient = 0;
+                }
+
+            }
+        }else
+        {
+            if (tmp_coefficient != 0){
+
+                if (sign_flag == 0){
+                    *c += tmp_coefficient;
+                } else
+                {
+                    *c -= tmp_coefficient;
+                }
+
+                sign_flag = 0;
+                tmp_coefficient = 0;
+            }
+
+            if (tmp == '-'){
+                sign_flag = 1;
+            }
+
+        }
+
+    ++i;
+    tmp = user_equation[i];
+
+    }
+
+    if (tmp_coefficient!=0){
+
+        if(sign_flag == 0){
+            *c += tmp_coefficient;
+        } else {
+            *c -= tmp_coefficient;
+        }
+
+    }
+
+    return 'k';//where is k == ok
+
+}
+
+int main()
+{
+    cout << "Do you want to write your equation by yourself?{YES/NO}" << endl;
+    cin >> user_ans;
+    if (user_ans == "YES"){
+
+        cout << "Now write your equation; example: 34x^2-51*x + 13213+24x^2= 0" << endl;
+        cin.sync();
+        while(cin.get(tmp)) {
+        if (tmp == 'X'){
+            tmp = tmp - 'A' + 'a';
+        }
+
+        user_equation.push_back(tmp);
+
+        if (tmp == '\n'){
+            break;
+        }
+
+        }
+        tmp = ' ';
+
+        print_equation(&a, &b, &c);
+
+    } else
+    {
+
+        cout << "Write down coefficients of your equation" << endl;
+        cin >> a >> b >> c;
+
+    }
+
+    switch (solve_square_equation(a,b,c,&x1,&x2))
+    {
+        case '0':
+        {
+            cout << "this equation hasn't got any roots (sorry, but it's true)" << endl << endl << "thanks for using this program" << endl;
+            return 0;
+        }
+        case '1':
+        {
+            cout << "the only one root that has this equation is: " << x1 << endl << endl << "thanks for using this program" << endl;
+            return 0;
+        }
+        case '2':
+        {
+            cout << "Yep, we did it, first root that has this equation is: " << x1 << endl  << "while the second root is: "  << x2 << endl << endl << "thanks for using this program" << endl;
+            return 0;
+        }
+        case 'i':
+        {
+            cout << "your equation has infinite number of roots (like your iq)" << endl << endl << "thanks for using this program" << endl;
+            return 0;
+        }
+    }
+}
