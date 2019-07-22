@@ -1,0 +1,337 @@
+.TH "C:/Users/Maksim/Desktop/homework/solve_square_equation/solve_square_equation.cpp" 3 "Mon Jul 22 2019" "Version 1.0" "solve_square_equation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/Maksim/Desktop/homework/solve_square_equation/solve_square_equation.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <float\&.h>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <vector>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char \fBsolve_square_equation\fP (int \fBa\fP, int \fBb\fP, int \fBc\fP, double *\fBx1\fP, double *\fBx2\fP)"
+.br
+.ti -1c
+.RI "char \fBprint_equation\fP (int *\fBa\fP, int *\fBb\fP, int *\fBc\fP)"
+.br
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBa\fP = 0"
+.br
+.ti -1c
+.RI "int \fBb\fP = 0"
+.br
+.ti -1c
+.RI "int \fBc\fP = 0"
+.br
+.ti -1c
+.RI "double \fBx1\fP = NAN"
+.br
+.ti -1c
+.RI "double \fBx2\fP = NAN"
+.br
+.ti -1c
+.RI "string \fBuser_ans\fP = ''"
+.br
+.ti -1c
+.RI "vector< char > \fBuser_equation\fP"
+.br
+.ti -1c
+.RI "char \fBtmp\fP = ' '"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int main ()"
+processing of solution of square equation
+.PP
+indicates that equation hasn't got any roots
+.PP
+indicates that equation has only one root
+.PP
+indicates that equation has two root
+.PP
+indicates that equation has infinite number of roots 
+.PP
+.nf
+523 {
+524     cout << "Do you want to write your equation by yourself?{YES/NO}" << endl;
+525     cin >> user_ans;
+526     if (user_ans == "YES"){
+527 
+528         cout << "Now write your equation; example: 34x^2-51*x + 13213+24x^2= 0" << endl;
+529         cin\&.sync();
+530         while(cin\&.get(tmp)) {
+531         if (tmp == 'X'){
+532             tmp = tmp - 'A' + 'a';
+533         }
+534 
+535         user_equation\&.push_back(tmp);
+536 
+537         if (tmp == '\n'){
+538             break;
+539         }
+540 
+541         }
+542         tmp = ' ';
+543 
+544         print_equation(&a, &b, &c);
+545 
+546     } else
+547     {
+548 
+549         cout << "Write down coefficients of your equation" << endl;
+550         cin >> a >> b >> c;
+551 
+552     }
+554     switch (solve_square_equation(a,b,c,&x1,&x2))
+555     {
+556         case '0': 
+557         {
+558             cout << "this equation hasn't got any roots (sorry, but it's true)" << endl << endl << "thanks for using this program" << endl;
+559             return 0;
+560         }
+561         case '1': 
+562         {
+563             cout << "the only one root that has this equation is: " << x1 << endl << endl << "thanks for using this program" << endl;
+564             return 0;
+565         }
+566         case '2': 
+567         {
+568             cout << "Yep, we did it, first root that has this equation is: " << x1 << endl  << "while the second root is: "  << x2 << endl << endl << "thanks for using this program" << endl;
+569             return 0;
+570         }
+571         case 'i': 
+572         {
+573             cout << "your equation has infinite number of roots (like your iq)" << endl << endl << "thanks for using this program" << endl;
+574             return 0;
+575         }
+576     }
+577 }
+.fi
+.SS "char print_equation (int * a, int * b, int * c)"
+
+.PP
+.nf
+343                                            {
+344 
+345     int i = 0;
+346     int tmp_coefficient = 0;
+347     bool sign_flag = 0;
+348 
+349     tmp = user_equation[i];
+350 
+351     while(tmp!='=' && tmp!='\n')
+352     {
+353 
+354 
+355         if(tmp != ' ' && tmp != '+' && tmp != '-')
+356         {
+357           \defgroup third_module in program module
+358     \ingroup main_module  if(tmp != 'x' && tmp != '*')
+359             {
+360                 tmp_coefficient = tmp_coefficient*10 + (tmp - '0');
+361 
+362             } else {
+363                 if(tmp_coefficient == 0){
+364                     ++tmp_coefficient;
+365                 }
+366                 if(tmp == '*'){
+367                     ++i;
+368                 }
+369 
+370                 if(user_equation[i+1] == '^'){
+371 
+372                     if (sign_flag == 0){
+373                         *a += tmp_coefficient;
+374                     } else
+375                     {
+376                         *a -= tmp_coefficient;
+377                     }
+378 
+379                     sign_flag = 0;
+380                     i += 2;
+381                     tmp_coefficient = 0;
+382                 }else
+383                 {
+384                     if (sign_flag == 0){
+385                         *b += tmp_coefficient;
+386                     } else
+387                     {
+388                         *b -= tmp_coefficient;
+389                     }
+390 
+391                     sign_flag = 0;
+392                     tmp_coefficient = 0;
+393                 }
+394 
+395             }
+396         }else
+397         {
+398             if (tmp_coefficient != 0){
+399 
+400                 if (sign_flag == 0){
+401                     *c += tmp_coefficient;
+402                 } else
+403                 {
+404                     *c -= tmp_coefficient;
+405                 }
+406 
+407                 sign_flag = 0;
+408                 tmp_coefficient = 0;
+409             }
+410 
+411             if (tmp == '-'){
+412                 sign_flag = 1;
+413             }
+414 
+415         }
+416 
+417     ++i;
+418     tmp = user_equation[i];
+419 
+420     }
+421 
+422     if (tmp_coefficient!=0){
+423 
+424         if(sign_flag == 0){
+425             *c += tmp_coefficient;
+426         } else {
+427             *c -= tmp_coefficient;
+428         }
+429 
+430     }
+431 
+432     return 'k';//where is k == ok
+433 
+434 }
+.fi
+.SS "char solve_square_equation (int a, int b, int c, double * x1, double * x2)"
+
+.PP
+.nf
+139                                                                        {
+140     if (c == 0)
+141     {
+142 
+143         if (b == 0)
+144         {
+145 
+146             if (a == 0)
+147             {//a=0 b=0 c=0
+148                 return 'i';// where is 'i'-infinite number solves of this equation
+149             } else
+150             {//b=0 c=0
+151                 *x1 = 0;
+152                 return '1';
+153             }
+154 
+155         } else
+156         {
+157 
+158             if(a == 0)
+159             {//a=0 c=0
+160                 *x1 = 0;
+161                 return '1';
+162             } else
+163             {//c=0
+164                     *x1 = 0;
+165                     *x2 = -b/a;
+166                     return '2';
+167             }
+168 
+169         }
+170 
+171     } else
+172     {
+173 
+174         if(b == 0)
+175         {
+176 
+177             if(a == 0)
+178             {//a=0 b=0
+179 
+180                 return '0';
+181 
+182             } else
+183             {//b=0
+184 
+185                 if(c > 0)
+186                 {//ax^2+|c|=0
+187 
+188                     return '0';
+189 
+190                 } else
+191                 {//ax^2-|c|=0
+192 
+193                     *x1 = -sqrt(-c);
+194                     *x2 = sqrt(-c);
+195                     return '2';
+196 
+197                 }
+198 
+199             }
+200 
+201         } else
+202         {
+203 
+204             if(a == 0)
+205             {//a=0
+206 
+207                 *x1 = -c/b;
+208                 return '1';
+209 
+210             } else
+211             {//nothing = 0
+212 
+213                 *x1 = ( - b - sqrt( b * b - 4 * a * c ) ) / (2 * a);
+214                 *x2 = ( - b + sqrt( b * b - 4 * a * c ) ) / (2 * a);
+215                 return '2';
+216 
+217             }
+218 
+219         }
+220 
+221     }
+222 
+223 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "int a = 0"
+
+.SS "int b = 0"
+
+.SS "int c = 0"
+
+.SS "char tmp = ' '"
+
+.SS "string user_ans = ''"
+
+.SS "vector<char> user_equation"
+
+.SS "double x1 = NAN"
+
+.SS "double x2 = NAN"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for solve_square_equation from the source code\&.

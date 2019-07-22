@@ -1,0 +1,358 @@
+\hypertarget{solve__square__equation_8cpp}{}\section{C\+:/\+Users/\+Maksim/\+Desktop/homework/solve\+\_\+square\+\_\+equation/solve\+\_\+square\+\_\+equation.cpp File Reference}
+\label{solve__square__equation_8cpp}\index{C:/Users/Maksim/Desktop/homework/solve\_square\_equation/solve\_square\_equation.cpp@{C:/Users/Maksim/Desktop/homework/solve\_square\_equation/solve\_square\_equation.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{solve__square__equation_8cpp_a21cce51f73d74da84ef1bc37984b99fa}{solve\+\_\+square\+\_\+equation}} (int \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}}, int \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}}, int \mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}}, double $\ast$\mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}}, double $\ast$\mbox{\hyperlink{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}{x2}})
+\item 
+char \mbox{\hyperlink{solve__square__equation_8cpp_ace45c5fc728f4519559178cb596e0f6f}{print\+\_\+equation}} (int $\ast$\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}}, int $\ast$\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}}, int $\ast$\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}})
+\item 
+int \mbox{\hyperlink{solve__square__equation_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} = 0
+\item 
+int \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} = 0
+\item 
+int \mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} = 0
+\item 
+double \mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}} = N\+AN
+\item 
+double \mbox{\hyperlink{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}{x2}} = N\+AN
+\item 
+string \mbox{\hyperlink{solve__square__equation_8cpp_a6c7bbf4d42fc835bad6b522aef6a63a5}{user\+\_\+ans}} = \char`\"{}\char`\"{}
+\item 
+vector$<$ char $>$ \mbox{\hyperlink{solve__square__equation_8cpp_a54b0d83db95a2833309146043c1435fa}{user\+\_\+equation}}
+\item 
+char \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} = \textquotesingle{} \textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{solve__square__equation_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{solve__square__equation_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{solve\_square\_equation.cpp@{solve\_square\_equation.cpp}!main@{main}}
+\index{main@{main}!solve\_square\_equation.cpp@{solve\_square\_equation.cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+processing of solution of square equation
+
+indicates that equation hasn\textquotesingle{}t got any roots
+
+indicates that equation has only one root
+
+indicates that equation has two root
+
+indicates that equation has infinite number of roots 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{523 \{}
+\DoxyCodeLine{524     cout << \textcolor{stringliteral}{"Do you want to write your equation by yourself?\{YES/NO\}"} << endl;}
+\DoxyCodeLine{525     cin >> \mbox{\hyperlink{solve__square__equation_8cpp_a6c7bbf4d42fc835bad6b522aef6a63a5}{user\_ans}};}
+\DoxyCodeLine{526     \textcolor{keywordflow}{if} (\mbox{\hyperlink{solve__square__equation_8cpp_a6c7bbf4d42fc835bad6b522aef6a63a5}{user\_ans}} == \textcolor{stringliteral}{"YES"})\{}
+\DoxyCodeLine{527 }
+\DoxyCodeLine{528         cout << \textcolor{stringliteral}{"Now write your equation; example: 34x\string^2-51*x + 13213+24x\string^2= 0"} << endl;}
+\DoxyCodeLine{529         cin.sync();}
+\DoxyCodeLine{530         \textcolor{keywordflow}{while}(cin.get(\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}})) \{}
+\DoxyCodeLine{531         \textcolor{keywordflow}{if} (\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} == \textcolor{charliteral}{'X'})\{}
+\DoxyCodeLine{532             \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} = \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} - \textcolor{charliteral}{'A'} + \textcolor{charliteral}{'a'};}
+\DoxyCodeLine{533         \}}
+\DoxyCodeLine{534 }
+\DoxyCodeLine{535         \mbox{\hyperlink{solve__square__equation_8cpp_a54b0d83db95a2833309146043c1435fa}{user\_equation}}.push\_back(\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}});}
+\DoxyCodeLine{536 }
+\DoxyCodeLine{537         \textcolor{keywordflow}{if} (\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} == \textcolor{charliteral}{'\(\backslash\)n'})\{}
+\DoxyCodeLine{538             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{539         \}}
+\DoxyCodeLine{540 }
+\DoxyCodeLine{541         \}}
+\DoxyCodeLine{542         \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} = \textcolor{charliteral}{' '};}
+\DoxyCodeLine{543 }
+\DoxyCodeLine{544         \mbox{\hyperlink{solve__square__equation_8cpp_ace45c5fc728f4519559178cb596e0f6f}{print\_equation}}(\&\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}}, \&\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}}, \&\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}});}
+\DoxyCodeLine{545 }
+\DoxyCodeLine{546     \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{547     \{}
+\DoxyCodeLine{548 }
+\DoxyCodeLine{549         cout << \textcolor{stringliteral}{"Write down coefficients of your equation"} << endl;}
+\DoxyCodeLine{550         cin >> \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} >> \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} >> \mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}};}
+\DoxyCodeLine{551 }
+\DoxyCodeLine{552     \}}
+\DoxyCodeLine{554     \textcolor{keywordflow}{switch} (\mbox{\hyperlink{solve__square__equation_8cpp_a21cce51f73d74da84ef1bc37984b99fa}{solve\_square\_equation}}(\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}},\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}},\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}},\&\mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}},\&\mbox{\hyperlink{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}{x2}}))}
+\DoxyCodeLine{555     \{}
+\DoxyCodeLine{556         \textcolor{keywordflow}{case} \textcolor{charliteral}{'0'}: }
+\DoxyCodeLine{557         \{}
+\DoxyCodeLine{558             cout << \textcolor{stringliteral}{"this equation hasn't got any roots (sorry, but it's true)"} << endl << endl << \textcolor{stringliteral}{"thanks for using this program"} << endl;}
+\DoxyCodeLine{559             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{560         \}}
+\DoxyCodeLine{561         \textcolor{keywordflow}{case} \textcolor{charliteral}{'1'}: }
+\DoxyCodeLine{562         \{}
+\DoxyCodeLine{563             cout << \textcolor{stringliteral}{"the only one root that has this equation is: "} << \mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}} << endl << endl << \textcolor{stringliteral}{"thanks for using this program"} << endl;}
+\DoxyCodeLine{564             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{565         \}}
+\DoxyCodeLine{566         \textcolor{keywordflow}{case} \textcolor{charliteral}{'2'}: }
+\DoxyCodeLine{567         \{}
+\DoxyCodeLine{568             cout << \textcolor{stringliteral}{"Yep, we did it, first root that has this equation is: "} << \mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}} << endl  << \textcolor{stringliteral}{"while the second root is: "}  << \mbox{\hyperlink{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}{x2}} << endl << endl << \textcolor{stringliteral}{"thanks for using this program"} << endl;}
+\DoxyCodeLine{569             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{570         \}}
+\DoxyCodeLine{571         \textcolor{keywordflow}{case} \textcolor{charliteral}{'i'}: }
+\DoxyCodeLine{572         \{}
+\DoxyCodeLine{573             cout << \textcolor{stringliteral}{"your equation has infinite number of roots (like your iq)"} << endl << endl << \textcolor{stringliteral}{"thanks for using this program"} << endl;}
+\DoxyCodeLine{574             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{575         \}}
+\DoxyCodeLine{576     \}}
+\DoxyCodeLine{577 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{solve__square__equation_8cpp_ace45c5fc728f4519559178cb596e0f6f}\label{solve__square__equation_8cpp_ace45c5fc728f4519559178cb596e0f6f}} 
+\index{solve\_square\_equation.cpp@{solve\_square\_equation.cpp}!print\_equation@{print\_equation}}
+\index{print\_equation@{print\_equation}!solve\_square\_equation.cpp@{solve\_square\_equation.cpp}}
+\subsubsection{\texorpdfstring{print\_equation()}{print\_equation()}}
+{\footnotesize\ttfamily char print\+\_\+equation (\begin{DoxyParamCaption}\item[{int $\ast$}]{a,  }\item[{int $\ast$}]{b,  }\item[{int $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{343                                            \{}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{346     \textcolor{keywordtype}{int} tmp\_coefficient = 0;}
+\DoxyCodeLine{347     \textcolor{keywordtype}{bool} sign\_flag = 0;}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349     \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} = \mbox{\hyperlink{solve__square__equation_8cpp_a54b0d83db95a2833309146043c1435fa}{user\_equation}}[i];}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351     \textcolor{keywordflow}{while}(\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}}!=\textcolor{charliteral}{'='} \&\& \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}}!=\textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{352     \{}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355         \textcolor{keywordflow}{if}(\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} != \textcolor{charliteral}{' '} \&\& \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} != \textcolor{charliteral}{'+'} \&\& \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} != \textcolor{charliteral}{'-'})}
+\DoxyCodeLine{356         \{}
+\DoxyCodeLine{357           \(\backslash\)defgroup third\_module in program module}
+\DoxyCodeLine{358     \(\backslash\)ingroup main\_module  \textcolor{keywordflow}{if}(\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} != \textcolor{charliteral}{'x'} \&\& \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} != \textcolor{charliteral}{'*'})}
+\DoxyCodeLine{359             \{}
+\DoxyCodeLine{360                 tmp\_coefficient = tmp\_coefficient*10 + (\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} - \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{363                 \textcolor{keywordflow}{if}(tmp\_coefficient == 0)\{}
+\DoxyCodeLine{364                     ++tmp\_coefficient;}
+\DoxyCodeLine{365                 \}}
+\DoxyCodeLine{366                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} == \textcolor{charliteral}{'*'})\{}
+\DoxyCodeLine{367                     ++i;}
+\DoxyCodeLine{368                 \}}
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{solve__square__equation_8cpp_a54b0d83db95a2833309146043c1435fa}{user\_equation}}[i+1] == \textcolor{charliteral}{'\string^'})\{}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372                     \textcolor{keywordflow}{if} (sign\_flag == 0)\{}
+\DoxyCodeLine{373                         *\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} += tmp\_coefficient;}
+\DoxyCodeLine{374                     \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{375                     \{}
+\DoxyCodeLine{376                         *\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} -= tmp\_coefficient;}
+\DoxyCodeLine{377                     \}}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379                     sign\_flag = 0;}
+\DoxyCodeLine{380                     i += 2;}
+\DoxyCodeLine{381                     tmp\_coefficient = 0;}
+\DoxyCodeLine{382                 \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{383                 \{}
+\DoxyCodeLine{384                     \textcolor{keywordflow}{if} (sign\_flag == 0)\{}
+\DoxyCodeLine{385                         *\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} += tmp\_coefficient;}
+\DoxyCodeLine{386                     \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{387                     \{}
+\DoxyCodeLine{388                         *\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} -= tmp\_coefficient;}
+\DoxyCodeLine{389                     \}}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391                     sign\_flag = 0;}
+\DoxyCodeLine{392                     tmp\_coefficient = 0;}
+\DoxyCodeLine{393                 \}}
+\DoxyCodeLine{394 }
+\DoxyCodeLine{395             \}}
+\DoxyCodeLine{396         \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{397         \{}
+\DoxyCodeLine{398             \textcolor{keywordflow}{if} (tmp\_coefficient != 0)\{}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400                 \textcolor{keywordflow}{if} (sign\_flag == 0)\{}
+\DoxyCodeLine{401                     *\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} += tmp\_coefficient;}
+\DoxyCodeLine{402                 \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{403                 \{}
+\DoxyCodeLine{404                     *\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} -= tmp\_coefficient;}
+\DoxyCodeLine{405                 \}}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407                 sign\_flag = 0;}
+\DoxyCodeLine{408                 tmp\_coefficient = 0;}
+\DoxyCodeLine{409             \}}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411             \textcolor{keywordflow}{if} (\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} == \textcolor{charliteral}{'-'})\{}
+\DoxyCodeLine{412                 sign\_flag = 1;}
+\DoxyCodeLine{413             \}}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{415         \}}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{417     ++i;}
+\DoxyCodeLine{418     \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} = \mbox{\hyperlink{solve__square__equation_8cpp_a54b0d83db95a2833309146043c1435fa}{user\_equation}}[i];}
+\DoxyCodeLine{419 }
+\DoxyCodeLine{420     \}}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{422     \textcolor{keywordflow}{if} (tmp\_coefficient!=0)\{}
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424         \textcolor{keywordflow}{if}(sign\_flag == 0)\{}
+\DoxyCodeLine{425             *\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} += tmp\_coefficient;}
+\DoxyCodeLine{426         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{427             *\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} -= tmp\_coefficient;}
+\DoxyCodeLine{428         \}}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430     \}}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{432     \textcolor{keywordflow}{return} \textcolor{charliteral}{'k'};\textcolor{comment}{//where is k == ok}}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{solve__square__equation_8cpp_a21cce51f73d74da84ef1bc37984b99fa}\label{solve__square__equation_8cpp_a21cce51f73d74da84ef1bc37984b99fa}} 
+\index{solve\_square\_equation.cpp@{solve\_square\_equation.cpp}!solve\_square\_equation@{solve\_square\_equation}}
+\index{solve\_square\_equation@{solve\_square\_equation}!solve\_square\_equation.cpp@{solve\_square\_equation.cpp}}
+\subsubsection{\texorpdfstring{solve\_square\_equation()}{solve\_square\_equation()}}
+{\footnotesize\ttfamily char solve\+\_\+square\+\_\+equation (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b,  }\item[{int}]{c,  }\item[{double $\ast$}]{x1,  }\item[{double $\ast$}]{x2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{139                                                                        \{}
+\DoxyCodeLine{140     \textcolor{keywordflow}{if} (\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} == 0)}
+\DoxyCodeLine{141     \{}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143         \textcolor{keywordflow}{if} (\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} == 0)}
+\DoxyCodeLine{144         \{}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146             \textcolor{keywordflow}{if} (\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} == 0)}
+\DoxyCodeLine{147             \{\textcolor{comment}{//a=0 b=0 c=0}}
+\DoxyCodeLine{148                 \textcolor{keywordflow}{return} \textcolor{charliteral}{'i'};\textcolor{comment}{// where is 'i'-infinite number solves of this equation}}
+\DoxyCodeLine{149             \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{150             \{\textcolor{comment}{//b=0 c=0}}
+\DoxyCodeLine{151                 *\mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}} = 0;}
+\DoxyCodeLine{152                 \textcolor{keywordflow}{return} \textcolor{charliteral}{'1'};}
+\DoxyCodeLine{153             \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155         \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{156         \{}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158             \textcolor{keywordflow}{if}(\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} == 0)}
+\DoxyCodeLine{159             \{\textcolor{comment}{//a=0 c=0}}
+\DoxyCodeLine{160                 *\mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}} = 0;}
+\DoxyCodeLine{161                 \textcolor{keywordflow}{return} \textcolor{charliteral}{'1'};}
+\DoxyCodeLine{162             \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{163             \{\textcolor{comment}{//c=0}}
+\DoxyCodeLine{164                     *\mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}} = 0;}
+\DoxyCodeLine{165                     *\mbox{\hyperlink{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}{x2}} = -\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}}/\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}};}
+\DoxyCodeLine{166                     \textcolor{keywordflow}{return} \textcolor{charliteral}{'2'};}
+\DoxyCodeLine{167             \}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169         \}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171     \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{172     \{}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174         \textcolor{keywordflow}{if}(\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} == 0)}
+\DoxyCodeLine{175         \{}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177             \textcolor{keywordflow}{if}(\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} == 0)}
+\DoxyCodeLine{178             \{\textcolor{comment}{//a=0 b=0}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180                 \textcolor{keywordflow}{return} \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182             \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{183             \{\textcolor{comment}{//b=0}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} > 0)}
+\DoxyCodeLine{186                 \{\textcolor{comment}{//ax\string^2+|c|=0}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188                     \textcolor{keywordflow}{return} \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190                 \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{191                 \{\textcolor{comment}{//ax\string^2-|c|=0}}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193                     *\mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}} = -sqrt(-\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}});}
+\DoxyCodeLine{194                     *\mbox{\hyperlink{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}{x2}} = sqrt(-\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}});}
+\DoxyCodeLine{195                     \textcolor{keywordflow}{return} \textcolor{charliteral}{'2'};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197                 \}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199             \}}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201         \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{202         \{}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204             \textcolor{keywordflow}{if}(\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} == 0)}
+\DoxyCodeLine{205             \{\textcolor{comment}{//a=0}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207                 *\mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}} = -\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}}/\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}};}
+\DoxyCodeLine{208                 \textcolor{keywordflow}{return} \textcolor{charliteral}{'1'};}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210             \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{211             \{\textcolor{comment}{//nothing = 0}}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213                 *\mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}} = ( - \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} - sqrt( \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} * \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} - 4 * \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} * \mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} ) ) / (2 * \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}});}
+\DoxyCodeLine{214                 *\mbox{\hyperlink{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}{x2}} = ( - \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} + sqrt( \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} * \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} - 4 * \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} * \mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} ) ) / (2 * \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}});}
+\DoxyCodeLine{215                 \textcolor{keywordflow}{return} \textcolor{charliteral}{'2'};}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217             \}}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219         \}}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221     \}}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}\label{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}} 
+\index{solve\_square\_equation.cpp@{solve\_square\_equation.cpp}!a@{a}}
+\index{a@{a}!solve\_square\_equation.cpp@{solve\_square\_equation.cpp}}
+\subsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily int a = 0}
+
+\mbox{\Hypertarget{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}\label{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}} 
+\index{solve\_square\_equation.cpp@{solve\_square\_equation.cpp}!b@{b}}
+\index{b@{b}!solve\_square\_equation.cpp@{solve\_square\_equation.cpp}}
+\subsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily int b = 0}
+
+\mbox{\Hypertarget{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}\label{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}} 
+\index{solve\_square\_equation.cpp@{solve\_square\_equation.cpp}!c@{c}}
+\index{c@{c}!solve\_square\_equation.cpp@{solve\_square\_equation.cpp}}
+\subsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily int c = 0}
+
+\mbox{\Hypertarget{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}\label{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}} 
+\index{solve\_square\_equation.cpp@{solve\_square\_equation.cpp}!tmp@{tmp}}
+\index{tmp@{tmp}!solve\_square\_equation.cpp@{solve\_square\_equation.cpp}}
+\subsubsection{\texorpdfstring{tmp}{tmp}}
+{\footnotesize\ttfamily char tmp = \textquotesingle{} \textquotesingle{}}
+
+\mbox{\Hypertarget{solve__square__equation_8cpp_a6c7bbf4d42fc835bad6b522aef6a63a5}\label{solve__square__equation_8cpp_a6c7bbf4d42fc835bad6b522aef6a63a5}} 
+\index{solve\_square\_equation.cpp@{solve\_square\_equation.cpp}!user\_ans@{user\_ans}}
+\index{user\_ans@{user\_ans}!solve\_square\_equation.cpp@{solve\_square\_equation.cpp}}
+\subsubsection{\texorpdfstring{user\_ans}{user\_ans}}
+{\footnotesize\ttfamily string user\+\_\+ans = \char`\"{}\char`\"{}}
+
+\mbox{\Hypertarget{solve__square__equation_8cpp_a54b0d83db95a2833309146043c1435fa}\label{solve__square__equation_8cpp_a54b0d83db95a2833309146043c1435fa}} 
+\index{solve\_square\_equation.cpp@{solve\_square\_equation.cpp}!user\_equation@{user\_equation}}
+\index{user\_equation@{user\_equation}!solve\_square\_equation.cpp@{solve\_square\_equation.cpp}}
+\subsubsection{\texorpdfstring{user\_equation}{user\_equation}}
+{\footnotesize\ttfamily vector$<$char$>$ user\+\_\+equation}
+
+\mbox{\Hypertarget{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}\label{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}} 
+\index{solve\_square\_equation.cpp@{solve\_square\_equation.cpp}!x1@{x1}}
+\index{x1@{x1}!solve\_square\_equation.cpp@{solve\_square\_equation.cpp}}
+\subsubsection{\texorpdfstring{x1}{x1}}
+{\footnotesize\ttfamily double x1 = N\+AN}
+
+\mbox{\Hypertarget{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}\label{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}} 
+\index{solve\_square\_equation.cpp@{solve\_square\_equation.cpp}!x2@{x2}}
+\index{x2@{x2}!solve\_square\_equation.cpp@{solve\_square\_equation.cpp}}
+\subsubsection{\texorpdfstring{x2}{x2}}
+{\footnotesize\ttfamily double x2 = N\+AN}
+

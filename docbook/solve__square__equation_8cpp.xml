@@ -1,0 +1,335 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_solve__square__equation_8cpp">
+<title>C:/Users/Maksim/Desktop/homework/solve_square_equation/solve_square_equation.cpp File Reference</title>
+<indexterm><primary>C:/Users/Maksim/Desktop/homework/solve_square_equation/solve_square_equation.cpp</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+#include &lt;float.h&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>char <link linkend="_solve__square__equation_8cpp_1a21cce51f73d74da84ef1bc37984b99fa">solve_square_equation</link> (int <link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>, int <link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>, int <link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>, double *<link linkend="_solve__square__equation_8cpp_1ac75b803b570527306e1e744bfb7a604f">x1</link>, double *<link linkend="_solve__square__equation_8cpp_1adcf04f5f1964d18b332643939561da0d">x2</link>)</para>
+</listitem>
+            <listitem><para>char <link linkend="_solve__square__equation_8cpp_1ace45c5fc728f4519559178cb596e0f6f">print_equation</link> (int *<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>, int *<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>, int *<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>)</para>
+</listitem>
+            <listitem><para>int <link linkend="_solve__square__equation_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link> = 0</para>
+</listitem>
+            <listitem><para>int <link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link> = 0</para>
+</listitem>
+            <listitem><para>int <link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link> = 0</para>
+</listitem>
+            <listitem><para>double <link linkend="_solve__square__equation_8cpp_1ac75b803b570527306e1e744bfb7a604f">x1</link> = NAN</para>
+</listitem>
+            <listitem><para>double <link linkend="_solve__square__equation_8cpp_1adcf04f5f1964d18b332643939561da0d">x2</link> = NAN</para>
+</listitem>
+            <listitem><para>string <link linkend="_solve__square__equation_8cpp_1a6c7bbf4d42fc835bad6b522aef6a63a5">user_ans</link> = &quot;&quot;</para>
+</listitem>
+            <listitem><para>vector&lt; char &gt; <link linkend="_solve__square__equation_8cpp_1a54b0d83db95a2833309146043c1435fa">user_equation</link></para>
+</listitem>
+            <listitem><para>char <link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link> = &apos; &apos;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_solve__square__equation_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>solve_square_equation.cpp</secondary></indexterm>
+<indexterm><primary>solve_square_equation.cpp</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para>
+<para>processing of solution of square equation</para>
+
+<para>indicates that equation hasn&apos;t got any roots</para>
+
+<para>indicates that equation has only one root</para>
+
+<para>indicates that equation has two root</para>
+
+<para>indicates that equation has infinite number of roots </para>
+<programlisting>523 {
+524 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Do&#32;you&#32;want&#32;to&#32;write&#32;your&#32;equation&#32;by&#32;yourself?{YES/NO}&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+525 &#32;&#32;&#32;&#32;cin&#32;&gt;&gt;&#32;<link linkend="_solve__square__equation_8cpp_1a6c7bbf4d42fc835bad6b522aef6a63a5">user_ans</link>;
+526 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_solve__square__equation_8cpp_1a6c7bbf4d42fc835bad6b522aef6a63a5">user_ans</link>&#32;==&#32;<emphasis role="stringliteral">&quot;YES&quot;</emphasis>){
+527 
+528 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Now&#32;write&#32;your&#32;equation;&#32;example:&#32;34x^2-51*x&#32;+&#32;13213+24x^2=&#32;0&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+529 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cin.sync();
+530 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(cin.get(<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>))&#32;{
+531 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;==&#32;<emphasis role="charliteral">&apos;X&apos;</emphasis>){
+532 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;=&#32;<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;-&#32;<emphasis role="charliteral">&apos;A&apos;</emphasis>&#32;+&#32;<emphasis role="charliteral">&apos;a&apos;</emphasis>;
+533 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+534 
+535 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_solve__square__equation_8cpp_1a54b0d83db95a2833309146043c1435fa">user_equation</link>.push_back(<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>);
+536 
+537 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;==&#32;<emphasis role="charliteral">&apos;\n&apos;</emphasis>){
+538 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+539 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+540 
+541 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+542 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;=&#32;<emphasis role="charliteral">&apos;&#32;&apos;</emphasis>;
+543 
+544 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_solve__square__equation_8cpp_1ace45c5fc728f4519559178cb596e0f6f">print_equation</link>(&amp;<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>,&#32;&amp;<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>,&#32;&amp;<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>);
+545 
+546 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>
+547 &#32;&#32;&#32;&#32;{
+548 
+549 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Write&#32;down&#32;coefficients&#32;of&#32;your&#32;equation&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+550 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cin&#32;&gt;&gt;&#32;<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>&#32;&gt;&gt;&#32;<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>&#32;&gt;&gt;&#32;<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>;
+551 
+552 &#32;&#32;&#32;&#32;}
+554 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(<link linkend="_solve__square__equation_8cpp_1a21cce51f73d74da84ef1bc37984b99fa">solve_square_equation</link>(<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>,<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>,<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>,&amp;<link linkend="_solve__square__equation_8cpp_1ac75b803b570527306e1e744bfb7a604f">x1</link>,&amp;<link linkend="_solve__square__equation_8cpp_1adcf04f5f1964d18b332643939561da0d">x2</link>))
+555 &#32;&#32;&#32;&#32;{
+556 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;0&apos;</emphasis>:&#32;
+557 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+558 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;this&#32;equation&#32;hasn&apos;t&#32;got&#32;any&#32;roots&#32;(sorry,&#32;but&#32;it&apos;s&#32;true)&quot;</emphasis>&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;thanks&#32;for&#32;using&#32;this&#32;program&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+559 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+560 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+561 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;1&apos;</emphasis>:&#32;
+562 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+563 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;the&#32;only&#32;one&#32;root&#32;that&#32;has&#32;this&#32;equation&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_solve__square__equation_8cpp_1ac75b803b570527306e1e744bfb7a604f">x1</link>&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;thanks&#32;for&#32;using&#32;this&#32;program&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+564 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+565 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+566 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;2&apos;</emphasis>:&#32;
+567 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+568 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Yep,&#32;we&#32;did&#32;it,&#32;first&#32;root&#32;that&#32;has&#32;this&#32;equation&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_solve__square__equation_8cpp_1ac75b803b570527306e1e744bfb7a604f">x1</link>&#32;&lt;&lt;&#32;endl&#32;&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;while&#32;the&#32;second&#32;root&#32;is:&#32;&quot;</emphasis>&#32;&#32;&lt;&lt;&#32;<link linkend="_solve__square__equation_8cpp_1adcf04f5f1964d18b332643939561da0d">x2</link>&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;thanks&#32;for&#32;using&#32;this&#32;program&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+569 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+570 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+571 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;i&apos;</emphasis>:&#32;
+572 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+573 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;your&#32;equation&#32;has&#32;infinite&#32;number&#32;of&#32;roots&#32;(like&#32;your&#32;iq)&quot;</emphasis>&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;thanks&#32;for&#32;using&#32;this&#32;program&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+574 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+575 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+576 &#32;&#32;&#32;&#32;}
+577 }
+</programlisting>    </section><anchor xml:id="_solve__square__equation_8cpp_1ace45c5fc728f4519559178cb596e0f6f"/>    <section>
+    <title>print_equation()</title>
+<indexterm><primary>print_equation</primary><secondary>solve_square_equation.cpp</secondary></indexterm>
+<indexterm><primary>solve_square_equation.cpp</primary><secondary>print_equation</secondary></indexterm>
+<para><computeroutput>char print_equation (int * a, int * b, int * c)</computeroutput></para><programlisting>343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+344 
+345 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;
+346 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;tmp_coefficient&#32;=&#32;0;
+347 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;sign_flag&#32;=&#32;0;
+348 
+349 &#32;&#32;&#32;&#32;<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;=&#32;<link linkend="_solve__square__equation_8cpp_1a54b0d83db95a2833309146043c1435fa">user_equation</link>[i];
+350 
+351 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>!=<emphasis role="charliteral">&apos;=&apos;</emphasis>&#32;&amp;&amp;&#32;<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>!=<emphasis role="charliteral">&apos;\n&apos;</emphasis>)
+352 &#32;&#32;&#32;&#32;{
+353 
+354 
+355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;!=&#32;<emphasis role="charliteral">&apos;&#32;&apos;</emphasis>&#32;&amp;&amp;&#32;<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;!=&#32;<emphasis role="charliteral">&apos;+&apos;</emphasis>&#32;&amp;&amp;&#32;<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;!=&#32;<emphasis role="charliteral">&apos;-&apos;</emphasis>)
+356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\defgroup&#32;third_module&#32;in&#32;program&#32;module
+358 &#32;&#32;&#32;&#32;\ingroup&#32;main_module&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;!=&#32;<emphasis role="charliteral">&apos;x&apos;</emphasis>&#32;&amp;&amp;&#32;<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;!=&#32;<emphasis role="charliteral">&apos;*&apos;</emphasis>)
+359 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp_coefficient&#32;=&#32;tmp_coefficient*10&#32;+&#32;(<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;-&#32;<emphasis role="charliteral">&apos;0&apos;</emphasis>);
+361 
+362 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+363 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(tmp_coefficient&#32;==&#32;0){
+364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;++tmp_coefficient;
+365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;==&#32;<emphasis role="charliteral">&apos;*&apos;</emphasis>){
+367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;++i;
+368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+369 
+370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_solve__square__equation_8cpp_1a54b0d83db95a2833309146043c1435fa">user_equation</link>[i+1]&#32;==&#32;<emphasis role="charliteral">&apos;^&apos;</emphasis>){
+371 
+372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(sign_flag&#32;==&#32;0){
+373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>&#32;+=&#32;tmp_coefficient;
+374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>
+375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+376 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>&#32;-=&#32;tmp_coefficient;
+377 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+378 
+379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sign_flag&#32;=&#32;0;
+380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;+=&#32;2;
+381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp_coefficient&#32;=&#32;0;
+382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}<emphasis role="keywordflow">else</emphasis>
+383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(sign_flag&#32;==&#32;0){
+385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>&#32;+=&#32;tmp_coefficient;
+386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>
+387 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>&#32;-=&#32;tmp_coefficient;
+389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+390 
+391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sign_flag&#32;=&#32;0;
+392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp_coefficient&#32;=&#32;0;
+393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+394 
+395 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+396 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}<emphasis role="keywordflow">else</emphasis>
+397 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+398 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(tmp_coefficient&#32;!=&#32;0){
+399 
+400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(sign_flag&#32;==&#32;0){
+401 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>&#32;+=&#32;tmp_coefficient;
+402 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>
+403 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>&#32;-=&#32;tmp_coefficient;
+405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+406 
+407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sign_flag&#32;=&#32;0;
+408 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp_coefficient&#32;=&#32;0;
+409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+410 
+411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;==&#32;<emphasis role="charliteral">&apos;-&apos;</emphasis>){
+412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sign_flag&#32;=&#32;1;
+413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+414 
+415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+416 
+417 &#32;&#32;&#32;&#32;++i;
+418 &#32;&#32;&#32;&#32;<link linkend="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d">tmp</link>&#32;=&#32;<link linkend="_solve__square__equation_8cpp_1a54b0d83db95a2833309146043c1435fa">user_equation</link>[i];
+419 
+420 &#32;&#32;&#32;&#32;}
+421 
+422 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(tmp_coefficient!=0){
+423 
+424 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(sign_flag&#32;==&#32;0){
+425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>&#32;+=&#32;tmp_coefficient;
+426 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>&#32;-=&#32;tmp_coefficient;
+428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+429 
+430 &#32;&#32;&#32;&#32;}
+431 
+432 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="charliteral">&apos;k&apos;</emphasis>;<emphasis role="comment">//where&#32;is&#32;k&#32;==&#32;ok</emphasis>
+433 
+434 }
+</programlisting>    </section><anchor xml:id="_solve__square__equation_8cpp_1a21cce51f73d74da84ef1bc37984b99fa"/>    <section>
+    <title>solve_square_equation()</title>
+<indexterm><primary>solve_square_equation</primary><secondary>solve_square_equation.cpp</secondary></indexterm>
+<indexterm><primary>solve_square_equation.cpp</primary><secondary>solve_square_equation</secondary></indexterm>
+<para><computeroutput>char solve_square_equation (int a, int b, int c, double * x1, double * x2)</computeroutput></para><programlisting>139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+140 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>&#32;==&#32;0)
+141 &#32;&#32;&#32;&#32;{
+142 
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>&#32;==&#32;0)
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+145 
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>&#32;==&#32;0)
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="comment">//a=0&#32;b=0&#32;c=0</emphasis>
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="charliteral">&apos;i&apos;</emphasis>;<emphasis role="comment">//&#32;where&#32;is&#32;&apos;i&apos;-infinite&#32;number&#32;solves&#32;of&#32;this&#32;equation</emphasis>
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="comment">//b=0&#32;c=0</emphasis>
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1ac75b803b570527306e1e744bfb7a604f">x1</link>&#32;=&#32;0;
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="charliteral">&apos;1&apos;</emphasis>;
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+154 
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+157 
+158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>&#32;==&#32;0)
+159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="comment">//a=0&#32;c=0</emphasis>
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1ac75b803b570527306e1e744bfb7a604f">x1</link>&#32;=&#32;0;
+161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="charliteral">&apos;1&apos;</emphasis>;
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="comment">//c=0</emphasis>
+164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1ac75b803b570527306e1e744bfb7a604f">x1</link>&#32;=&#32;0;
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1adcf04f5f1964d18b332643939561da0d">x2</link>&#32;=&#32;-<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>/<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>;
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="charliteral">&apos;2&apos;</emphasis>;
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+168 
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+170 
+171 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>
+172 &#32;&#32;&#32;&#32;{
+173 
+174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>&#32;==&#32;0)
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+176 
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>&#32;==&#32;0)
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="comment">//a=0&#32;b=0</emphasis>
+179 
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="charliteral">&apos;0&apos;</emphasis>;
+181 
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="comment">//b=0</emphasis>
+184 
+185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>&#32;&gt;&#32;0)
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="comment">//ax^2+|c|=0</emphasis>
+187 
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="charliteral">&apos;0&apos;</emphasis>;
+189 
+190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>
+191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="comment">//ax^2-|c|=0</emphasis>
+192 
+193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1ac75b803b570527306e1e744bfb7a604f">x1</link>&#32;=&#32;-sqrt(-<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>);
+194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1adcf04f5f1964d18b332643939561da0d">x2</link>&#32;=&#32;sqrt(-<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>);
+195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="charliteral">&apos;2&apos;</emphasis>;
+196 
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+198 
+199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+200 
+201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>
+202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+203 
+204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>&#32;==&#32;0)
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="comment">//a=0</emphasis>
+206 
+207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1ac75b803b570527306e1e744bfb7a604f">x1</link>&#32;=&#32;-<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>/<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>;
+208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="charliteral">&apos;1&apos;</emphasis>;
+209 
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>
+211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="comment">//nothing&#32;=&#32;0</emphasis>
+212 
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1ac75b803b570527306e1e744bfb7a604f">x1</link>&#32;=&#32;(&#32;-&#32;<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>&#32;-&#32;sqrt(&#32;<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>&#32;*&#32;<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>&#32;-&#32;4&#32;*&#32;<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>&#32;*&#32;<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>&#32;)&#32;)&#32;/&#32;(2&#32;*&#32;<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>);
+214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_solve__square__equation_8cpp_1adcf04f5f1964d18b332643939561da0d">x2</link>&#32;=&#32;(&#32;-&#32;<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>&#32;+&#32;sqrt(&#32;<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>&#32;*&#32;<link linkend="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9">b</link>&#32;-&#32;4&#32;*&#32;<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>&#32;*&#32;<link linkend="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3">c</link>&#32;)&#32;)&#32;/&#32;(2&#32;*&#32;<link linkend="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74">a</link>);
+215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="charliteral">&apos;2&apos;</emphasis>;
+216 
+217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+218 
+219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+220 
+221 &#32;&#32;&#32;&#32;}
+222 
+223 }
+</programlisting></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74"/>    <section>
+    <title>a</title>
+<indexterm><primary>a</primary><secondary>solve_square_equation.cpp</secondary></indexterm>
+<indexterm><primary>solve_square_equation.cpp</primary><secondary>a</secondary></indexterm>
+<para><computeroutput>int a = 0</computeroutput></para>    </section><anchor xml:id="_solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9"/>    <section>
+    <title>b</title>
+<indexterm><primary>b</primary><secondary>solve_square_equation.cpp</secondary></indexterm>
+<indexterm><primary>solve_square_equation.cpp</primary><secondary>b</secondary></indexterm>
+<para><computeroutput>int b = 0</computeroutput></para>    </section><anchor xml:id="_solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3"/>    <section>
+    <title>c</title>
+<indexterm><primary>c</primary><secondary>solve_square_equation.cpp</secondary></indexterm>
+<indexterm><primary>solve_square_equation.cpp</primary><secondary>c</secondary></indexterm>
+<para><computeroutput>int c = 0</computeroutput></para>    </section><anchor xml:id="_solve__square__equation_8cpp_1a8ccc9b5edd4f8f5191037e9bb99e5b8d"/>    <section>
+    <title>tmp</title>
+<indexterm><primary>tmp</primary><secondary>solve_square_equation.cpp</secondary></indexterm>
+<indexterm><primary>solve_square_equation.cpp</primary><secondary>tmp</secondary></indexterm>
+<para><computeroutput>char tmp = &apos; &apos;</computeroutput></para>    </section><anchor xml:id="_solve__square__equation_8cpp_1a6c7bbf4d42fc835bad6b522aef6a63a5"/>    <section>
+    <title>user_ans</title>
+<indexterm><primary>user_ans</primary><secondary>solve_square_equation.cpp</secondary></indexterm>
+<indexterm><primary>solve_square_equation.cpp</primary><secondary>user_ans</secondary></indexterm>
+<para><computeroutput>string user_ans = &quot;&quot;</computeroutput></para>    </section><anchor xml:id="_solve__square__equation_8cpp_1a54b0d83db95a2833309146043c1435fa"/>    <section>
+    <title>user_equation</title>
+<indexterm><primary>user_equation</primary><secondary>solve_square_equation.cpp</secondary></indexterm>
+<indexterm><primary>solve_square_equation.cpp</primary><secondary>user_equation</secondary></indexterm>
+<para><computeroutput>vector&lt;char&gt; user_equation</computeroutput></para>    </section><anchor xml:id="_solve__square__equation_8cpp_1ac75b803b570527306e1e744bfb7a604f"/>    <section>
+    <title>x1</title>
+<indexterm><primary>x1</primary><secondary>solve_square_equation.cpp</secondary></indexterm>
+<indexterm><primary>solve_square_equation.cpp</primary><secondary>x1</secondary></indexterm>
+<para><computeroutput>double x1 = NAN</computeroutput></para>    </section><anchor xml:id="_solve__square__equation_8cpp_1adcf04f5f1964d18b332643939561da0d"/>    <section>
+    <title>x2</title>
+<indexterm><primary>x2</primary><secondary>solve_square_equation.cpp</secondary></indexterm>
+<indexterm><primary>solve_square_equation.cpp</primary><secondary>x2</secondary></indexterm>
+<para><computeroutput>double x2 = NAN</computeroutput></para></section>
+</section>
+</section>

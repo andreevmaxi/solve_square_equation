@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__first__module">
+<title>solve square function module</title>
+<indexterm><primary>solve square function module</primary></indexterm>
+<para>
+
+<para>This function solving square equation. </para>
+ 
+</para>
+
+<para>This function solving square equation. </para>
+
+<para><formalpara><title>Author: </title>
+
+<para>andreevmaxi </para>
+</formalpara>
+<formalpara><title>Version: </title>
+
+<para>1.0 </para>
+</formalpara>
+<formalpara><title>Date: </title>
+
+<para>july 2019 year </para>
+</formalpara>
+<formalpara><title>Copyright: </title>
+
+<para>korobcom This is head function in this program, it&apos;s solving square equation by getting coefficients (head, second and free) of inputing equation and changes variables x1 and x2 with 1st and 2nd roots of equation. the formulas in variant of a!=0, b!=0,c!=0: <inlinemediaobject>
+            <imageobject>
+                <imagedata align="center" valign="middle" scalefit="0" fileref="form_0.png"/>
+            </imageobject>
+</inlinemediaobject>
+ and <inlinemediaobject>
+            <imageobject>
+                <imagedata align="center" valign="middle" scalefit="0" fileref="form_1.png"/>
+            </imageobject>
+</inlinemediaobject>
+ </para>
+</formalpara>
+<formalpara><title>Returns: </title>
+
+<para>Also it return char values &apos;1&apos;,&apos;2&apos;,&apos;0&apos; and &apos;i&apos;, where is: &apos;1&apos; - means that this equation have only one root and it is in x1 variable. &apos;2&apos; - means that this equation have two roots in x1 and x2 variable respectively. &apos;0&apos; - means that this equation don&apos;t have any roots! &apos;i&apos; - means that this equation have infinite number of roots. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in                                </entry>                                <entry>a</entry>
+                                <entry>
+<para>it&apos;s integer variable of head member(coefficient) of equation </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>in                                </entry>                                <entry>b</entry>
+                                <entry>
+<para>it&apos;s integer variable of second member(coefficient) of equation </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>in                                </entry>                                <entry>c</entry>
+                                <entry>
+<para>it&apos;s integer variable of free member(coefficient) of equation </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>out                                </entry>                                <entry>x1</entry>
+                                <entry>
+<para>it&apos;s double variable which contains first root of input equation </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>out                                </entry>                                <entry>x2</entry>
+                                <entry>
+<para>it&apos;s double variable which contains second root of input equation</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <literallayout><computeroutput>char&#32;solve_square_equation(int&#32;a,&#32;int&#32;b,&#32;int&#32;c,&#32;double*&#32;x1,&#32;double*&#32;x2){
+&#32;&#32;&#32;&#32;if&#32;(c&#32;==&#32;0)
+&#32;&#32;&#32;&#32;{
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;if&#32;(b&#32;==&#32;0)
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;if&#32;(a&#32;==&#32;0)
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{//a=0&#32;b=0&#32;c=0
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;&apos;i&apos;;//&#32;where&#32;is&#32;&apos;i&apos;-infinite&#32;number&#32;solves&#32;of&#32;this&#32;equation
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;else
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{//b=0&#32;c=0
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*x1&#32;=&#32;0;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;&apos;1&apos;;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;else
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;if(a&#32;==&#32;0)
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{//a=0&#32;c=0
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*x1&#32;=&#32;0;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;&apos;1&apos;;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;else
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{//c=0
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*x1&#32;=&#32;0;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*x2&#32;=&#32;-b/a;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;&apos;2&apos;;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+
+&#32;&#32;&#32;&#32;}&#32;else
+&#32;&#32;&#32;&#32;{
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;if(b&#32;==&#32;0)
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;if(a&#32;==&#32;0)
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{//a=0&#32;b=0
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;&apos;0&apos;;
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;else
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{//b=0
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;if(c&#32;&gt;&#32;0)
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{//ax^2+|c|=0
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;&apos;0&apos;;
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;else
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{//ax^2-|c|=0
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*x1&#32;=&#32;-sqrt(-c);
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*x2&#32;=&#32;sqrt(-c);
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;&apos;2&apos;;
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;else
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;if(a&#32;==&#32;0)
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{//a=0
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*x1&#32;=&#32;-c/b;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;&apos;1&apos;;
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;else
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{//nothing&#32;=&#32;0
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*x1&#32;=&#32;(&#32;-&#32;b&#32;-&#32;sqrt(&#32;b&#32;*&#32;b&#32;-&#32;4&#32;*&#32;a&#32;*&#32;c&#32;)&#32;)&#32;/&#32;(2&#32;*&#32;a);
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*x2&#32;=&#32;(&#32;-&#32;b&#32;+&#32;sqrt(&#32;b&#32;*&#32;b&#32;-&#32;4&#32;*&#32;a&#32;*&#32;c&#32;)&#32;)&#32;/&#32;(2&#32;*&#32;a);
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;&apos;2&apos;;
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+
+&#32;&#32;&#32;&#32;}
+
+}
+</computeroutput></literallayout> </para>
+</section>

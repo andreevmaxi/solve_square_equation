@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="group__third__module" kind="group">
+    <compoundname>third_module</compoundname>
+    <title>in program module</title>
+    <briefdescription>
+<para>Main function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>andreevmaxi </para>
+</simplesect>
+<simplesect kind="version"><para>1.0 </para>
+</simplesect>
+<simplesect kind="date"><para>july 2019 year </para>
+</simplesect>
+<simplesect kind="copyright"><para>korobcom there is two important things in main function: First is that there is ask of user&apos;s choice want he to print equation like on the sheet or to print just coefficients of square equation; Second is the processing returning information from function solve_square_equation and outputing roots of square equations (which contains in x1 and x2 variables) </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>it&apos;s integer variable of head member(coefficient) of equation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>it&apos;s integer variable of second member(coefficient) of equation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>it&apos;s integer variable of free member(coefficient) of equation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">x1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>it&apos;s double variable which contains first root of input equation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">x2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>it&apos;s double variable which contains second root of input equation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">user_ans</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>it&apos;s string variable which contains answer of user about want he to write equation by yourself or just coefficients </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">user_equation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>it&apos;s vector of chars in input of user&apos;s equations </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tmp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>it&apos;s temperary char variable which used in inputing user_equation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<programlisting><codeline><highlight class="normal">int<sp/>main()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>&quot;Do<sp/>you<sp/>want<sp/>to<sp/>write<sp/>your<sp/>equation<sp/>by<sp/>yourself?{YES/NO}&quot;<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cin<sp/>&gt;&gt;<sp/>user_ans;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(user_ans<sp/>==<sp/>&quot;YES&quot;){</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>&quot;Now<sp/>write<sp/>your<sp/>equation;<sp/>example:<sp/>34x^2-51*x<sp/>+<sp/>13213+24x^2=<sp/>0&quot;<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cin.sync();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while(cin.get(tmp))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(tmp<sp/>==<sp/>&apos;X&apos;){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>tmp<sp/>-<sp/>&apos;A&apos;<sp/>+<sp/>&apos;a&apos;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>user_equation.push_back(tmp);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(tmp<sp/>==<sp/>&apos;\n&apos;){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>&apos;<sp/>&apos;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print_equation(&amp;a,<sp/>&amp;b,<sp/>&amp;c);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>else</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>&quot;Write<sp/>down<sp/>coefficients<sp/>of<sp/>your<sp/>equation&quot;<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cin<sp/>&gt;&gt;<sp/>a<sp/>&gt;&gt;<sp/>b<sp/>&gt;&gt;<sp/>c;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>///<sp/>processing<sp/>of<sp/>solution<sp/>of<sp/>square<sp/>equation</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>switch<sp/>(solve_square_equation(a,b,c,&amp;x1,&amp;x2))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>&apos;0&apos;:<sp/>///<sp/>indicates<sp/>that<sp/>equation<sp/>hasn&apos;t<sp/>got<sp/>any<sp/>roots</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>&quot;this<sp/>equation<sp/>hasn&apos;t<sp/>got<sp/>any<sp/>roots<sp/>(sorry,<sp/>but<sp/>it&apos;s<sp/>true)&quot;<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>&quot;thanks<sp/>for<sp/>using<sp/>this<sp/>program&quot;<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>&apos;1&apos;:<sp/>///<sp/>indicates<sp/>that<sp/>equation<sp/>has<sp/>only<sp/>one<sp/>root</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>&quot;the<sp/>only<sp/>one<sp/>root<sp/>that<sp/>has<sp/>this<sp/>equation<sp/>is:<sp/>&quot;<sp/>&lt;&lt;<sp/>x1<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>&quot;thanks<sp/>for<sp/>using<sp/>this<sp/>program&quot;<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>&apos;2&apos;:<sp/>///<sp/>indicates<sp/>that<sp/>equation<sp/>has<sp/>two<sp/>root</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>&quot;Yep,<sp/>we<sp/>did<sp/>it,<sp/>first<sp/>root<sp/>that<sp/>has<sp/>this<sp/>equation<sp/>is:<sp/>&quot;<sp/>&lt;&lt;<sp/>x1<sp/>&lt;&lt;<sp/>endl<sp/><sp/>&lt;&lt;<sp/>&quot;while<sp/>the<sp/>second<sp/>root<sp/>is:<sp/>&quot;<sp/><sp/>&lt;&lt;<sp/>x2<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>&quot;thanks<sp/>for<sp/>using<sp/>this<sp/>program&quot;<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>&apos;i&apos;:<sp/>///<sp/>indicates<sp/>that<sp/>equation<sp/>has<sp/>infinite<sp/>number<sp/>of<sp/>roots</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>&quot;your<sp/>equation<sp/>has<sp/>infinite<sp/>number<sp/>of<sp/>roots<sp/>(like<sp/>your<sp/>iq)&quot;<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>&quot;thanks<sp/>for<sp/>using<sp/>this<sp/>program&quot;<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

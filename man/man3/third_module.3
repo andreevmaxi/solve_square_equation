@@ -1,0 +1,117 @@
+.TH "third_module" 3 "Mon Jul 22 2019" "Version 1.0" "solve_square_equation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+third_module \- Main function\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SH "Detailed Description"
+.PP 
+Main function\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+andreevmaxi 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+july 2019 year 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+korobcom there is two important things in main function: First is that there is ask of user's choice want he to print equation like on the sheet or to print just coefficients of square equation; Second is the processing returning information from function solve_square_equation and outputing roots of square equations (which contains in x1 and x2 variables) 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP it's integer variable of head member(coefficient) of equation 
+.br
+\fIb\fP it's integer variable of second member(coefficient) of equation 
+.br
+\fIc\fP it's integer variable of free member(coefficient) of equation 
+.br
+\fIx1\fP it's double variable which contains first root of input equation 
+.br
+\fIx2\fP it's double variable which contains second root of input equation 
+.br
+\fIuser_ans\fP it's string variable which contains answer of user about want he to write equation by yourself or just coefficients 
+.br
+\fIuser_equation\fP it's vector of chars in input of user's equations 
+.br
+\fItmp\fP it's temperary char variable which used in inputing user_equation
+.RE
+.PP
+.PP
+.nf
+int main()
+{
+    cout << "Do you want to write your equation by yourself?{YES/NO}" << endl;
+    cin >> user_ans;
+    if (user_ans == "YES"){
+
+        cout << "Now write your equation; example: 34x^2-51*x + 13213+24x^2= 0" << endl;
+        cin\&.sync();
+        while(cin\&.get(tmp)) {
+        if (tmp == 'X'){
+            tmp = tmp - 'A' + 'a';
+        }
+
+        user_equation\&.push_back(tmp);
+
+        if (tmp == '\n'){
+            break;
+        }
+
+        }
+        tmp = ' ';
+
+        print_equation(&a, &b, &c);
+
+    } else
+    {
+
+        cout << "Write down coefficients of your equation" << endl;
+        cin >> a >> b >> c;
+
+    }
+    switch (solve_square_equation(a,b,c,&x1,&x2))
+    {
+        case '0': 
+        {
+            cout << "this equation hasn't got any roots (sorry, but it's true)" << endl << endl << "thanks for using this program" << endl;
+            return 0;
+        }
+        case '1': 
+        {
+            cout << "the only one root that has this equation is: " << x1 << endl << endl << "thanks for using this program" << endl;
+            return 0;
+        }
+        case '2': 
+        {
+            cout << "Yep, we did it, first root that has this equation is: " << x1 << endl  << "while the second root is: "  << x2 << endl << endl << "thanks for using this program" << endl;
+            return 0;
+        }
+        case 'i': 
+        {
+            cout << "your equation has infinite number of roots (like your iq)" << endl << endl << "thanks for using this program" << endl;
+            return 0;
+        }
+    }
+}
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for solve_square_equation from the source code\&.

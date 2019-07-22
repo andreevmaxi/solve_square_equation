@@ -1,0 +1,129 @@
+\hypertarget{group__second__module}{}\section{side module}
+\label{group__second__module}\index{side module@{side module}}
+
+
+This function get\textquotesingle{}s coefficients from wrote equation.  
+
+
+This function get\textquotesingle{}s coefficients from wrote equation. 
+
+\begin{DoxyAuthor}{Author}
+andreevmaxi 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+july 2019 year 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+korobcom
+\end{DoxyCopyright}
+This is second head function in this program, it\textquotesingle{}s getting coefficients from printed equation by processing every symbol of it. At the end it print coefficients of this equation in a, b and c variables. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & it\textquotesingle{}s integer variable of head member(coefficient) of equation which used in solve\+\_\+square\+\_\+equation function \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & it\textquotesingle{}s integer variable of second member(coefficient) of equation which used in solve\+\_\+square\+\_\+equation function \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & it\textquotesingle{}s integer variable of free member(coefficient) of equation which used in solve\+\_\+square\+\_\+equation function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If this function return char \textquotesingle{}k\textquotesingle{}, than everything is O\+K!
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{char} \mbox{\hyperlink{solve__square__equation_8cpp_ace45c5fc728f4519559178cb596e0f6f}{print\_equation}}(\textcolor{keywordtype}{int}* \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}}, \textcolor{keywordtype}{int}* \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}}, \textcolor{keywordtype}{int}* \mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}})\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} tmp\_coefficient = 0;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} sign\_flag = 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} = \mbox{\hyperlink{solve__square__equation_8cpp_a54b0d83db95a2833309146043c1435fa}{user\_equation}}[i];}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}}!=\textcolor{charliteral}{'='} \&\& \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}}!=\textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} != \textcolor{charliteral}{' '} \&\& \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} != \textcolor{charliteral}{'+'} \&\& \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} != \textcolor{charliteral}{'-'})}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{          \(\backslash\)defgroup third\_module in program module}
+\DoxyCodeLine{    \(\backslash\)ingroup main\_module  \textcolor{keywordflow}{if}(\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} != \textcolor{charliteral}{'x'} \&\& \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} != \textcolor{charliteral}{'*'})}
+\DoxyCodeLine{            \{}
+\DoxyCodeLine{                tmp\_coefficient = tmp\_coefficient*10 + (\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} - \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{            \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{                \textcolor{keywordflow}{if}(tmp\_coefficient == 0)\{}
+\DoxyCodeLine{                    ++tmp\_coefficient;}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{                \textcolor{keywordflow}{if}(\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} == \textcolor{charliteral}{'*'})\{}
+\DoxyCodeLine{                    ++i;}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{                \textcolor{keywordflow}{if}(\mbox{\hyperlink{solve__square__equation_8cpp_a54b0d83db95a2833309146043c1435fa}{user\_equation}}[i+1] == \textcolor{charliteral}{'\string^'})\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{                    \textcolor{keywordflow}{if} (sign\_flag == 0)\{}
+\DoxyCodeLine{                        *\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} += tmp\_coefficient;}
+\DoxyCodeLine{                    \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{                    \{}
+\DoxyCodeLine{                        *\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} -= tmp\_coefficient;}
+\DoxyCodeLine{                    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{                    sign\_flag = 0;}
+\DoxyCodeLine{                    i += 2;}
+\DoxyCodeLine{                    tmp\_coefficient = 0;}
+\DoxyCodeLine{                \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{                \{}
+\DoxyCodeLine{                    \textcolor{keywordflow}{if} (sign\_flag == 0)\{}
+\DoxyCodeLine{                        *\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} += tmp\_coefficient;}
+\DoxyCodeLine{                    \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{                    \{}
+\DoxyCodeLine{                        *\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} -= tmp\_coefficient;}
+\DoxyCodeLine{                    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{                    sign\_flag = 0;}
+\DoxyCodeLine{                    tmp\_coefficient = 0;}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (tmp\_coefficient != 0)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{                \textcolor{keywordflow}{if} (sign\_flag == 0)\{}
+\DoxyCodeLine{                    *\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} += tmp\_coefficient;}
+\DoxyCodeLine{                \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{                \{}
+\DoxyCodeLine{                    *\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} -= tmp\_coefficient;}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{                sign\_flag = 0;}
+\DoxyCodeLine{                tmp\_coefficient = 0;}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} == \textcolor{charliteral}{'-'})\{}
+\DoxyCodeLine{                sign\_flag = 1;}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    ++i;}
+\DoxyCodeLine{    \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} = \mbox{\hyperlink{solve__square__equation_8cpp_a54b0d83db95a2833309146043c1435fa}{user\_equation}}[i];}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (tmp\_coefficient!=0)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(sign\_flag == 0)\{}
+\DoxyCodeLine{            *\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} += tmp\_coefficient;}
+\DoxyCodeLine{        \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{            *\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} -= tmp\_coefficient;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} \textcolor{charliteral}{'k'};\textcolor{comment}{//where is k == ok}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 

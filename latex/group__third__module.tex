@@ -1,0 +1,99 @@
+\hypertarget{group__third__module}{}\section{in program module}
+\label{group__third__module}\index{in program module@{in program module}}
+
+
+Main function.  
+
+
+Main function. 
+
+\begin{DoxyAuthor}{Author}
+andreevmaxi 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+july 2019 year 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+korobcom there is two important things in main function\+: First is that there is ask of user\textquotesingle{}s choice want he to print equation like on the sheet or to print just coefficients of square equation; Second is the processing returning information from function solve\+\_\+square\+\_\+equation and outputing roots of square equations (which contains in x1 and x2 variables) 
+\end{DoxyCopyright}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em a} & it\textquotesingle{}s integer variable of head member(coefficient) of equation \\
+\hline
+\mbox{\texttt{ out}}  & {\em b} & it\textquotesingle{}s integer variable of second member(coefficient) of equation \\
+\hline
+\mbox{\texttt{ out}}  & {\em c} & it\textquotesingle{}s integer variable of free member(coefficient) of equation \\
+\hline
+\mbox{\texttt{ in}}  & {\em x1} & it\textquotesingle{}s double variable which contains first root of input equation \\
+\hline
+\mbox{\texttt{ in}}  & {\em x2} & it\textquotesingle{}s double variable which contains second root of input equation \\
+\hline
+\mbox{\texttt{ in}}  & {\em user\+\_\+ans} & it\textquotesingle{}s string variable which contains answer of user about want he to write equation by yourself or just coefficients \\
+\hline
+\mbox{\texttt{ out}}  & {\em user\+\_\+equation} & it\textquotesingle{}s vector of chars in input of user\textquotesingle{}s equations \\
+\hline
+\mbox{\texttt{ in}}  & {\em tmp} & it\textquotesingle{}s temperary char variable which used in inputing user\+\_\+equation\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{solve__square__equation_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    cout << \textcolor{stringliteral}{"Do you want to write your equation by yourself?\{YES/NO\}"} << endl;}
+\DoxyCodeLine{    cin >> \mbox{\hyperlink{solve__square__equation_8cpp_a6c7bbf4d42fc835bad6b522aef6a63a5}{user\_ans}};}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (\mbox{\hyperlink{solve__square__equation_8cpp_a6c7bbf4d42fc835bad6b522aef6a63a5}{user\_ans}} == \textcolor{stringliteral}{"YES"})\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{        cout << \textcolor{stringliteral}{"Now write your equation; example: 34x\string^2-51*x + 13213+24x\string^2= 0"} << endl;}
+\DoxyCodeLine{        cin.sync();}
+\DoxyCodeLine{        \textcolor{keywordflow}{while}(cin.get(\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}})) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} == \textcolor{charliteral}{'X'})\{}
+\DoxyCodeLine{            \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} = \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} - \textcolor{charliteral}{'A'} + \textcolor{charliteral}{'a'};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{solve__square__equation_8cpp_a54b0d83db95a2833309146043c1435fa}{user\_equation}}.push\_back(\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (\mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} == \textcolor{charliteral}{'\(\backslash\)n'})\{}
+\DoxyCodeLine{            \textcolor{keywordflow}{break};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \mbox{\hyperlink{solve__square__equation_8cpp_a8ccc9b5edd4f8f5191037e9bb99e5b8d}{tmp}} = \textcolor{charliteral}{' '};}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{solve__square__equation_8cpp_ace45c5fc728f4519559178cb596e0f6f}{print\_equation}}(\&\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}}, \&\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}}, \&\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{        cout << \textcolor{stringliteral}{"Write down coefficients of your equation"} << endl;}
+\DoxyCodeLine{        cin >> \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} >> \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} >> \mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \textcolor{keywordflow}{switch} (\mbox{\hyperlink{solve__square__equation_8cpp_a21cce51f73d74da84ef1bc37984b99fa}{solve\_square\_equation}}(\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}},\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}},\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}},\&\mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}},\&\mbox{\hyperlink{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}{x2}}))}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{case} \textcolor{charliteral}{'0'}: }
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            cout << \textcolor{stringliteral}{"this equation hasn't got any roots (sorry, but it's true)"} << endl << endl << \textcolor{stringliteral}{"thanks for using this program"} << endl;}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{case} \textcolor{charliteral}{'1'}: }
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            cout << \textcolor{stringliteral}{"the only one root that has this equation is: "} << \mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}} << endl << endl << \textcolor{stringliteral}{"thanks for using this program"} << endl;}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{case} \textcolor{charliteral}{'2'}: }
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            cout << \textcolor{stringliteral}{"Yep, we did it, first root that has this equation is: "} << \mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}} << endl  << \textcolor{stringliteral}{"while the second root is: "}  << \mbox{\hyperlink{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}{x2}} << endl << endl << \textcolor{stringliteral}{"thanks for using this program"} << endl;}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{case} \textcolor{charliteral}{'i'}: }
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            cout << \textcolor{stringliteral}{"your equation has infinite number of roots (like your iq)"} << endl << endl << \textcolor{stringliteral}{"thanks for using this program"} << endl;}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 

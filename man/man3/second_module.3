@@ -1,0 +1,151 @@
+.TH "second_module" 3 "Mon Jul 22 2019" "Version 1.0" "solve_square_equation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+second_module \- This function get's coefficients from wrote equation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SH "Detailed Description"
+.PP 
+This function get's coefficients from wrote equation\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+andreevmaxi 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+july 2019 year 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+korobcom
+.RE
+.PP
+This is second head function in this program, it's getting coefficients from printed equation by processing every symbol of it\&. At the end it print coefficients of this equation in a, b and c variables\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP it's integer variable of head member(coefficient) of equation which used in solve_square_equation function 
+.br
+\fIb\fP it's integer variable of second member(coefficient) of equation which used in solve_square_equation function 
+.br
+\fIc\fP it's integer variable of free member(coefficient) of equation which used in solve_square_equation function 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If this function return char 'k', than everything is OK!
+.RE
+.PP
+.PP
+.nf
+char print_equation(int* a, int* b, int* c){
+
+    int i = 0;
+    int tmp_coefficient = 0;
+    bool sign_flag = 0;
+
+    tmp = user_equation[i];
+
+    while(tmp!='=' && tmp!='\n')
+    {
+
+
+        if(tmp != ' ' && tmp != '+' && tmp != '-')
+        {
+          \defgroup third_module in program module
+    \ingroup main_module  if(tmp != 'x' && tmp != '*')
+            {
+                tmp_coefficient = tmp_coefficient*10 + (tmp - '0');
+
+            } else {
+                if(tmp_coefficient == 0){
+                    ++tmp_coefficient;
+                }
+                if(tmp == '*'){
+                    ++i;
+                }
+
+                if(user_equation[i+1] == '^'){
+
+                    if (sign_flag == 0){
+                        *a += tmp_coefficient;
+                    } else
+                    {
+                        *a -= tmp_coefficient;
+                    }
+
+                    sign_flag = 0;
+                    i += 2;
+                    tmp_coefficient = 0;
+                }else
+                {
+                    if (sign_flag == 0){
+                        *b += tmp_coefficient;
+                    } else
+                    {
+                        *b -= tmp_coefficient;
+                    }
+
+                    sign_flag = 0;
+                    tmp_coefficient = 0;
+                }
+
+            }
+        }else
+        {
+            if (tmp_coefficient != 0){
+
+                if (sign_flag == 0){
+                    *c += tmp_coefficient;
+                } else
+                {
+                    *c -= tmp_coefficient;
+                }
+
+                sign_flag = 0;
+                tmp_coefficient = 0;
+            }
+
+            if (tmp == '-'){
+                sign_flag = 1;
+            }
+
+        }
+
+    ++i;
+    tmp = user_equation[i];
+
+    }
+
+    if (tmp_coefficient!=0){
+
+        if(sign_flag == 0){
+            *c += tmp_coefficient;
+        } else {
+            *c -= tmp_coefficient;
+        }
+
+    }
+
+    return 'k';//where is k == ok
+
+}
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for solve_square_equation from the source code\&.
