@@ -1,0 +1,175 @@
+\hypertarget{group__second__module}{}\section{side module}
+\label{group__second__module}\index{side module@{side module}}
+
+
+This function get\textquotesingle{}s coefficients from wrote equation.  
+
+
+This function get\textquotesingle{}s coefficients from wrote equation. 
+
+\begin{DoxyAuthor}{Author}
+andreevmaxi 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+july 2019 year 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+korobcom
+\end{DoxyCopyright}
+This is second head function in this program,
+
+it\textquotesingle{}s getting coefficients from printed equation by processing every symbol of it. At the end it print coefficients of this equation in a, b and c variables. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em a} & it\textquotesingle{}s integer variable of head member(coefficient) of equation which used in solve\+\_\+square\+\_\+equation function \\
+\hline
+\mbox{\texttt{ out}}  & {\em b} & it\textquotesingle{}s integer variable of second member(coefficient) of equation which used in solve\+\_\+square\+\_\+equation function \\
+\hline
+\mbox{\texttt{ out}}  & {\em c} & it\textquotesingle{}s integer variable of free member(coefficient) of equation which used in solve\+\_\+square\+\_\+equation function \\
+\hline
+\mbox{\texttt{ in}}  & {\em user\+\_\+equation} & vector of chars which first it contains answer of user about want he to write equation by yourself or just coefficients second it\textquotesingle{}s used in input of user\textquotesingle{}s equations(after deleting information about previous user answer) \\
+\hline
+\mbox{\texttt{ in}}  & {\em tmp} & it\textquotesingle{}s temperary char variable which used in inputing user\+\_\+equation and than in processing of user\+\_\+equation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If this function return char \textquotesingle{}k\textquotesingle{}, than everything is O\+K!
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{char} \mbox{\hyperlink{solve__square__equation_8cpp_ace45c5fc728f4519559178cb596e0f6f}{print\_equation}}(\textcolor{keywordtype}{int}* \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}}, \textcolor{keywordtype}{int}* \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}}, \textcolor{keywordtype}{int}* \mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} tmp\_coefficient = 0;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} sign\_flag = 0;}
+\DoxyCodeLine{    vector <char> user\_equation;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} tmp = \textcolor{charliteral}{' '};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    cout << \textcolor{stringliteral}{"Do you want to write your equation by yourself?\{YES/NO\}"} << endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    cin.sync();}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(cin.get(tmp)) \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{        user\_equation.push\_back(tmp);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (tmp == \textcolor{charliteral}{'\(\backslash\)n'})\{}
+\DoxyCodeLine{            \textcolor{keywordflow}{break};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (user\_equation[0] != \textcolor{charliteral}{'Y'} || user\_equation[1] != \textcolor{charliteral}{'E'} || user\_equation[2] != \textcolor{charliteral}{'S'})}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{        cout << \textcolor{stringliteral}{"Write down coefficients of your equation"} << endl;}
+\DoxyCodeLine{        cin >> *\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} >> *\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} >> *\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}};}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} \textcolor{charliteral}{'k'};}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    user\_equation.resize(0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    cout << \textcolor{stringliteral}{"Now write your equation; example: 34x\string^2-51*x + 13213+24x\string^2= 0"} << endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    cin.sync();}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(cin.get(tmp)) \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (tmp == \textcolor{charliteral}{'X'})\{}
+\DoxyCodeLine{            tmp = tmp - \textcolor{charliteral}{'A'} + \textcolor{charliteral}{'a'};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        user\_equation.push\_back(tmp);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (tmp == \textcolor{charliteral}{'\(\backslash\)n'})\{}
+\DoxyCodeLine{            \textcolor{keywordflow}{break};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    tmp = \textcolor{charliteral}{' '};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    tmp = user\_equation[i];}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(tmp!=\textcolor{charliteral}{'='} \&\& tmp!=\textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(tmp != \textcolor{charliteral}{' '} \&\& tmp != \textcolor{charliteral}{'+'} \&\& tmp != \textcolor{charliteral}{'-'})}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \textcolor{keywordflow}{if}(tmp != \textcolor{charliteral}{'x'} \&\& tmp != \textcolor{charliteral}{'*'})}
+\DoxyCodeLine{            \{}
+\DoxyCodeLine{                tmp\_coefficient = tmp\_coefficient*10 + (tmp - \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{            \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{                \textcolor{keywordflow}{if}(tmp\_coefficient == 0)\{}
+\DoxyCodeLine{                    ++tmp\_coefficient;}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{                \textcolor{keywordflow}{if}(tmp == \textcolor{charliteral}{'*'})\{}
+\DoxyCodeLine{                    ++i;}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{                \textcolor{keywordflow}{if}(user\_equation[i+1] == \textcolor{charliteral}{'\string^'})\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{                    \textcolor{keywordflow}{if} (sign\_flag == 0)\{}
+\DoxyCodeLine{                        *\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} += tmp\_coefficient;}
+\DoxyCodeLine{                    \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{                    \{}
+\DoxyCodeLine{                        *\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} -= tmp\_coefficient;}
+\DoxyCodeLine{                    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{                    sign\_flag = 0;}
+\DoxyCodeLine{                    i += 2;}
+\DoxyCodeLine{                    tmp\_coefficient = 0;}
+\DoxyCodeLine{                \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{                \{}
+\DoxyCodeLine{                    \textcolor{keywordflow}{if} (sign\_flag == 0)\{}
+\DoxyCodeLine{                        *\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} += tmp\_coefficient;}
+\DoxyCodeLine{                    \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{                    \{}
+\DoxyCodeLine{                        *\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} -= tmp\_coefficient;}
+\DoxyCodeLine{                    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{                    sign\_flag = 0;}
+\DoxyCodeLine{                    tmp\_coefficient = 0;}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (tmp\_coefficient != 0)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{                \textcolor{keywordflow}{if} (sign\_flag == 0)\{}
+\DoxyCodeLine{                    *\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} += tmp\_coefficient;}
+\DoxyCodeLine{                \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{                \{}
+\DoxyCodeLine{                    *\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} -= tmp\_coefficient;}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{                sign\_flag = 0;}
+\DoxyCodeLine{                tmp\_coefficient = 0;}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (tmp == \textcolor{charliteral}{'-'})\{}
+\DoxyCodeLine{                sign\_flag = 1;}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    ++i;}
+\DoxyCodeLine{    tmp = user\_equation[i];}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (tmp\_coefficient!=0)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(sign\_flag == 0)\{}
+\DoxyCodeLine{            *\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} += tmp\_coefficient;}
+\DoxyCodeLine{        \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{            *\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} -= tmp\_coefficient;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} \textcolor{charliteral}{'k'};\textcolor{comment}{//where is k == ok}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.15">
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="solve__square__equation_8cpp" kind="file"><name>solve_square_equation.cpp</name>
+    <member refid="solve__square__equation_8cpp_1aa4c2a5552e9bc49b1816ff532f558c74" kind="variable"><name>a</name></member>
+    <member refid="solve__square__equation_8cpp_1a148e3876077787926724625411d6e7a9" kind="variable"><name>b</name></member>
+    <member refid="solve__square__equation_8cpp_1a4e1e0e72dd773439e333c84dd762a9c3" kind="variable"><name>c</name></member>
+    <member refid="solve__square__equation_8cpp_1ac75b803b570527306e1e744bfb7a604f" kind="variable"><name>x1</name></member>
+    <member refid="solve__square__equation_8cpp_1adcf04f5f1964d18b332643939561da0d" kind="variable"><name>x2</name></member>
+    <member refid="solve__square__equation_8cpp_1a21cce51f73d74da84ef1bc37984b99fa" kind="function"><name>solve_square_equation</name></member>
+    <member refid="solve__square__equation_8cpp_1ace45c5fc728f4519559178cb596e0f6f" kind="function"><name>print_equation</name></member>
+    <member refid="solve__square__equation_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="group__main__module" kind="group"><name>main_module</name>
+  </compound>
+  <compound refid="group__first__module" kind="group"><name>first_module</name>
+  </compound>
+  <compound refid="group__second__module" kind="group"><name>second_module</name>
+  </compound>
+  <compound refid="group__third__module" kind="group"><name>third_module</name>
+  </compound>
+  <compound refid="dir_9281439504b86594aa72338bc7eac4b5" kind="dir"><name>C:/Users/Maksim/Desktop</name>
+  </compound>
+  <compound refid="dir_ab9b250382ce819ca8683a55bf6dd051" kind="dir"><name>C:/Users/Maksim/Desktop/homework</name>
+  </compound>
+  <compound refid="dir_8e2eba40a103776ea2d41f3b6a11c07f" kind="dir"><name>C:/Users/Maksim</name>
+  </compound>
+  <compound refid="dir_d5c1fed3f4a4549ba0604cad75f832ca" kind="dir"><name>C:/Users/Maksim/Desktop/homework/solve_square_equation</name>
+  </compound>
+  <compound refid="dir_d522931ffa1371640980b621734a4381" kind="dir"><name>C:/Users</name>
+  </compound>
+</doxygenindex>

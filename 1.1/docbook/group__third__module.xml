@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__third__module">
+<title>in program module</title>
+<indexterm><primary>in program module</primary></indexterm>
+<para>
+
+<para>Main function. </para>
+ 
+</para>
+
+<para>Main function. </para>
+
+<para><formalpara><title>Author: </title>
+
+<para>andreevmaxi </para>
+</formalpara>
+<formalpara><title>Version: </title>
+
+<para>1.1 </para>
+</formalpara>
+<formalpara><title>Date: </title>
+
+<para>july 2019 year </para>
+</formalpara>
+<formalpara><title>Copyright: </title>
+
+<para>korobcom It&apos;s just processing returning information from function solve_square_equation and outputing roots of square equations (which contains in x1 and x2 variables) </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out                                </entry>                                <entry>a</entry>
+                                <entry>
+<para>it&apos;s integer variable of head member(coefficient) of equation </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>out                                </entry>                                <entry>b</entry>
+                                <entry>
+<para>it&apos;s integer variable of second member(coefficient) of equation </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>out                                </entry>                                <entry>c</entry>
+                                <entry>
+<para>it&apos;s integer variable of free member(coefficient) of equation </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>in                                </entry>                                <entry>x1</entry>
+                                <entry>
+<para>it&apos;s double variable which contains first root of input equation </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>in                                </entry>                                <entry>x2</entry>
+                                <entry>
+<para>it&apos;s double variable which contains second root of input equation</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <literallayout><computeroutput>int&#32;main()
+{
+&#32;&#32;&#32;&#32;print_equation(&amp;a,&#32;&amp;b,&#32;&amp;c);
+&#32;&#32;&#32;&#32;///&#32;processing&#32;of&#32;solution&#32;of&#32;square&#32;equation
+&#32;&#32;&#32;&#32;switch&#32;(solve_square_equation(a,b,c,&amp;x1,&amp;x2))
+&#32;&#32;&#32;&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;case&#32;&apos;0&apos;:&#32;///&#32;indicates&#32;that&#32;equation&#32;hasn&apos;t&#32;got&#32;any&#32;roots
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;&quot;this&#32;equation&#32;hasn&apos;t&#32;got&#32;any&#32;roots&#32;(sorry,&#32;but&#32;it&apos;s&#32;true)&quot;&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;&quot;thanks&#32;for&#32;using&#32;this&#32;program&quot;&#32;&lt;&lt;&#32;endl;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;0;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;case&#32;&apos;1&apos;:&#32;///&#32;indicates&#32;that&#32;equation&#32;has&#32;only&#32;one&#32;root
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;&quot;the&#32;only&#32;one&#32;root&#32;that&#32;has&#32;this&#32;equation&#32;is:&#32;&quot;&#32;&lt;&lt;&#32;x1&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;&quot;thanks&#32;for&#32;using&#32;this&#32;program&quot;&#32;&lt;&lt;&#32;endl;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;0;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;case&#32;&apos;2&apos;:&#32;///&#32;indicates&#32;that&#32;equation&#32;has&#32;two&#32;root
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;&quot;Yep,&#32;we&#32;did&#32;it,&#32;first&#32;root&#32;that&#32;has&#32;this&#32;equation&#32;is:&#32;&quot;&#32;&lt;&lt;&#32;x1&#32;&lt;&lt;&#32;endl&#32;&#32;&lt;&lt;&#32;&quot;while&#32;the&#32;second&#32;root&#32;is:&#32;&quot;&#32;&#32;&lt;&lt;&#32;x2&#32;&lt;&lt;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endl&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;&quot;thanks&#32;for&#32;using&#32;this&#32;program&quot;&#32;&lt;&lt;&#32;endl;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;0;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;case&#32;&apos;i&apos;:&#32;///&#32;indicates&#32;that&#32;equation&#32;has&#32;infinite&#32;number&#32;of&#32;roots
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;&quot;your&#32;equation&#32;has&#32;infinite&#32;number&#32;of&#32;roots&#32;(like&#32;your&#32;iq)&quot;&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;endl&#32;&lt;&lt;&#32;&quot;thanks&#32;for&#32;using&#32;this&#32;program&quot;&#32;&lt;&lt;&#32;endl;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;0;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;}
+}
+</computeroutput></literallayout> </para>
+</section>
