@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__main__module">
+<title>solve square module</title>
+<indexterm><primary>solve square module</primary></indexterm>
+<para>
+
+<para>This is main module this is the module which contains all working functions. </para>
+ 
+</para>
+<simplesect>
+    <title>Modules    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_group__third__module">in program module</link></para>
+
+<para>Main function. </para>
+</listitem>
+            <listitem><para><link linkend="_group__first__module">solve square function module</link></para>
+
+<para>This function solving square equation. </para>
+</listitem>
+            <listitem><para><link linkend="_group__second__module">side module</link></para>
+
+<para>This function get&apos;s coefficients from wrote equation. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This is main module this is the module which contains all working functions. </para>
+</section>
+</section>

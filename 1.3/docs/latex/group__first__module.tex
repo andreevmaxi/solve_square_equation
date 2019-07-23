@@ -1,0 +1,82 @@
+\hypertarget{group__first__module}{}\section{solve square function module}
+\label{group__first__module}\index{solve square function module@{solve square function module}}
+
+
+This function solving square equation.  
+
+
+This function solving square equation. 
+
+\begin{DoxyAuthor}{Author}
+andreevmaxi 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+july 2019 year 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+korobcom This is head function in this program, it\textquotesingle{}s solving square equation by getting coefficients (head, second and free) of inputing equation and changes variables x1 and x2 with 1st and 2nd roots of equation. the formulas in variant of a!=0, b!=0,c!=0\+: $ x_1 = \frac{-b-\sqrt{b^2-4*a*c}}{2a} $ and $ x_2 = \frac{-b+\sqrt{b^2-4*a*c}}{2a} $ 
+\end{DoxyCopyright}
+\begin{DoxyReturn}{Returns}
+Also it return char values \textquotesingle{}1\textquotesingle{},\textquotesingle{}2\textquotesingle{},\textquotesingle{}0\textquotesingle{} and \textquotesingle{}i\textquotesingle{}, where is\+: \textquotesingle{}1\textquotesingle{} -\/ means that this equation have only one root and it is in x1 variable. \textquotesingle{}2\textquotesingle{} -\/ means that this equation have two roots in x1 and x2 variable respectively. \textquotesingle{}0\textquotesingle{} -\/ means that this equation don\textquotesingle{}t have any roots! \textquotesingle{}i\textquotesingle{} -\/ means that this equation have infinite number of roots. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & it\textquotesingle{}s integer variable of head member(coefficient) of equation \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & it\textquotesingle{}s integer variable of second member(coefficient) of equation \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & it\textquotesingle{}s integer variable of free member(coefficient) of equation \\
+\hline
+\mbox{\texttt{ out}}  & {\em x1} & it\textquotesingle{}s double variable which contains first root of input equation \\
+\hline
+\mbox{\texttt{ out}}  & {\em x2} & it\textquotesingle{}s double variable which contains second root of input equation\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{char} \mbox{\hyperlink{solve__square__equation_8cpp_a110cb7d04bfec5cde5b30830035c78c2}{SolveSquareEquation}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}}, \textcolor{keywordtype}{double}* \mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}}, \textcolor{keywordtype}{double}* \mbox{\hyperlink{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}{x2}})\{}
+\DoxyCodeLine{    assert(\mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}} != NULL);}
+\DoxyCodeLine{    assert(\mbox{\hyperlink{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}{x2}} != NULL);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{switch}(\mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}})}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{case} 0:}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} == 0 \&\& \mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} == 0)\{}
+\DoxyCodeLine{                \textcolor{keywordflow}{return} \textcolor{charliteral}{'i'};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} == 0 \&\& \mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} != 0)\{}
+\DoxyCodeLine{                \textcolor{keywordflow}{return} \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            *\mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}}=-\mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}}/\mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}};}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} \textcolor{charliteral}{'1'};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \textcolor{keywordtype}{double} discriminate = 0; }
+\DoxyCodeLine{            discriminate = \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} * \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} - 4 * \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}} * \mbox{\hyperlink{solve__square__equation_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}};}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} ( discriminate >= 0 )}
+\DoxyCodeLine{            \{}
+\DoxyCodeLine{                *\mbox{\hyperlink{solve__square__equation_8cpp_ac75b803b570527306e1e744bfb7a604f}{x1}} = (- \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} - sqrt( discriminate ) )/(2 * \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}});}
+\DoxyCodeLine{                *\mbox{\hyperlink{solve__square__equation_8cpp_adcf04f5f1964d18b332643939561da0d}{x2}} = (- \mbox{\hyperlink{solve__square__equation_8cpp_a148e3876077787926724625411d6e7a9}{b}} + sqrt( discriminate ) )/(2 * \mbox{\hyperlink{solve__square__equation_8cpp_aa4c2a5552e9bc49b1816ff532f558c74}{a}});}
+\DoxyCodeLine{                \textcolor{keywordflow}{if} ( discriminate == 0)}
+\DoxyCodeLine{                \{}
+\DoxyCodeLine{                    \textcolor{keywordflow}{return} \textcolor{charliteral}{'1'};}
+\DoxyCodeLine{                \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{                \{}
+\DoxyCodeLine{                    \textcolor{keywordflow}{return} \textcolor{charliteral}{'2'};}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{            \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{            \{}
+\DoxyCodeLine{                \textcolor{keywordflow}{return} \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 

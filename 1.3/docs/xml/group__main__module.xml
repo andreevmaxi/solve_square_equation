@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="group__main__module" kind="group">
+    <compoundname>main_module</compoundname>
+    <title>solve square module</title>
+    <innergroup refid="group__third__module">in program module</innergroup>
+    <innergroup refid="group__first__module">solve square function module</innergroup>
+    <innergroup refid="group__second__module">side module</innergroup>
+    <briefdescription>
+<para>This is main module this is the module which contains all working functions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

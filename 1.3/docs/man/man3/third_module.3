@@ -1,0 +1,84 @@
+.TH "third_module" 3 "Wed Jul 24 2019" "Version 1.3" "solve_square_equation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+third_module \- Main function\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SH "Detailed Description"
+.PP 
+Main function\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+andreevmaxi 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.3 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+july 2019 year 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+korobcom It's just processing returning information from function solve_square_equation and outputing roots of square equations (which contains in x1 and x2 variables) 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP it's integer variable of head member(coefficient) of equation 
+.br
+\fIb\fP it's integer variable of second member(coefficient) of equation 
+.br
+\fIc\fP it's integer variable of free member(coefficient) of equation 
+.br
+\fIx1\fP it's double variable which contains first root of input equation 
+.br
+\fIx2\fP it's double variable which contains second root of input equation
+.RE
+.PP
+.PP
+.nf
+int main()
+{
+    PrintEquation(&a, &b, &c);
+    switch (solve square equation(a,b,c,&x1,&x2))
+    {
+        case '0': 
+        {
+            cout << endl << "this equation hasn't got any roots (sorry, but it's true)" << endl << endl << "thanks for using this program" << endl;
+            return 0;
+        }
+        case '1': 
+        {
+            cout << endl << "the only one root that has this equation is: " << x1 << endl << endl << "thanks for using this program" << endl;
+            return 0;
+        }
+        case '2': 
+        {
+            cout << endl << "Yep, we did it, first root that has this equation is: " << x1 << endl  << "while the second root is: "  << x2 <<
+            endl << endl << "thanks for using this program" << endl;
+            return 0;
+        }
+        case 'i': 
+        {
+            cout << endl << "your equation has infinite number of roots (like your iq)" << endl << endl << "thanks for using this program" << endl;
+            return 0;
+        }
+    }
+}
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for solve_square_equation from the source code\&.
