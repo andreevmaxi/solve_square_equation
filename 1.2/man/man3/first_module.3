@@ -1,0 +1,102 @@
+.TH "first_module" 3 "Wed Jul 24 2019" "Version 1.2" "solve_square_equation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+first_module \- This function solving square equation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SH "Detailed Description"
+.PP 
+This function solving square equation\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+andreevmaxi 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.2 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+july 2019 year 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+korobcom This is head function in this program, it's solving square equation by getting coefficients (head, second and free) of inputing equation and changes variables x1 and x2 with 1st and 2nd roots of equation\&. the formulas in variant of a!=0, b!=0,c!=0: $ x_1 = \frac{-b-\sqrt{b^2-4*a*c}}{2a} $ and $ x_2 = \frac{-b+\sqrt{b^2-4*a*c}}{2a} $ 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Also it return char values '1','2','0' and 'i', where is: '1' - means that this equation have only one root and it is in x1 variable\&. '2' - means that this equation have two roots in x1 and x2 variable respectively\&. '0' - means that this equation don't have any roots! 'i' - means that this equation have infinite number of roots\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP it's integer variable of head member(coefficient) of equation 
+.br
+\fIb\fP it's integer variable of second member(coefficient) of equation 
+.br
+\fIc\fP it's integer variable of free member(coefficient) of equation 
+.br
+\fIx1\fP it's double variable which contains first root of input equation 
+.br
+\fIx2\fP it's double variable which contains second root of input equation
+.RE
+.PP
+.PP
+.nf
+char SolveSquareEquation(int a, int b, int c, double* x1, double* x2){
+    assert(x1 != NULL);
+    assert(x2 != NULL);
+
+    switch(a)
+    {
+        case 0:
+        {
+            if (b == 0 && c == 0){
+                return 'i';
+            }
+            if (b == 0 && c != 0){
+                return '0';
+            }
+            *x1=-c/b;
+            return '1';
+        }
+        default:
+        {
+            double discriminate = 0; 
+            discriminate = b * b - 4 * a * c;
+            if ( discriminate >= 0 )
+            {
+                *x1 = (- b - sqrt( discriminate ) )/(2 * a);
+                *x2 = (- b + sqrt( discriminate ) )/(2 * a);
+                if ( discriminate == 0)
+                {
+                    return '1';
+                } else
+                {
+                    return '2';
+                }
+            } else
+            {
+                return '0';
+            }
+        }
+
+    }
+
+}
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for solve_square_equation from the source code\&.
